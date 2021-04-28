@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<map>
+    <page pageName="BrowserControls" >
+        <locator type="id" timeOut="3" value="com.android.browser:id/url">浏览器地址URL</locator>
+    </page>
+
+    <!--locator of page map info -->
+    <page pageName="LoginPage">
+        <locator type="id" timeOut="3" value="signLogin">帐号密码方式登录</locator>
+        <locator type="id" timeOut="3" value="username">帐号</locator>
+        <!-- -->
+        <locator type="id" timeOut="3" value="password">密码</locator>
+        <locator type="id" timeOut="3" value="login-btn">登录按钮</locator>
+    </page>
+    <page pageName="HomePage">
+        <locator type="xpath" timeOut="3" value="//div[@data-seed='/']">店铺Tab</locator>
+        <locator type="xpath" timeOut="3" value="//div[@data-seed='/category']">分类Tab</locator>
+        <locator type="xpath" timeOut="3" value="//div[@data-seed='/goodissue']">订单Tab</locator>
+        <locator type="xpath" timeOut="3" value="//div[@data-seed='/cart']">购物车Tab</locator>
+        <locator type="xpath" timeOut="5" value="//div[@data-seed='/personal']">我的Tab</locator>
+        <locator type="selector" timeOut="6" value="div.home-supplier-content div img">登录查看价格</locator>
+        <locator type="selector" timeOut="3" value="div.head-call-bar span">欢迎光临</locator>
+        <locator type="selector" timeOut="3" value="div.right-box1">店铺电话</locator>
+        <locator type="selector" timeOut="3" value="input.am-search-value">首页搜索TextBox</locator>
+        <locator type="selector" timeOut="3" value="div.short-cut-section">快捷按钮区域</locator>
+        <locator type="xpath" timeOut="3" value="//div[@text='全部商品‘]/following-sibling::div[1]">全部商品更多</locator>
+    </page>
+    <page pageName="SearchPage">
+        <locator type="selector" timeOut="5" value="div.base-nav-header  input.am-search-value">搜索TextBox</locator>
+        <locator type="selector" timeOut="3" value="div.hocContainer div.prod-list-item div.hsy-prod-name span">第一条商品名称</locator>
+        <locator type="selector" timeOut="3" value="div.key-word">搜完以后TextBox</locator>
+        <locator type="selector" timeOut="3" value="form.am-search.home-search-bar a.am-search-clear">清空x</locator>
+    </page>
+    <page pageName="ProductCategoryPage">
+        <locator type="selector" timeOut="3" value="div.left-bar-item">商品分类</locator>
+        <locator type="selector" timeOut="3" value="div.left-bar-item.side-item-unselect span">某一未选定商品分类名称</locator>
+        <locator type="selector" timeOut="3" value="div.left-bar-item.side-item-select span span">选定的商品分类名称</locator>
+    </page>
+    <page pageName="UserPage">
+        <locator type="linkText" timeOut="5" value="退出登录">退出登录Btn</locator>
+        <locator type="linkText" timeOut="5" value="登录">登录Btn</locator>
+    </page>
+</map>

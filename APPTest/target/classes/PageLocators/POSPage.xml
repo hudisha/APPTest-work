@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<map>
+    <!--locator of page map info -->
+
+    <page pageName="TSignUPPage">
+        <locator type="xpath" timeOut="3" value="//android.widget.Button/preceding-sibling::android.view.View[5]//android.widget.EditText">账号</locator>
+        <locator type="xpath" timeOut="3" value="//android.widget.Button/preceding-sibling::android.view.View[4]//android.widget.EditText">密码</locator>
+        <locator type="xpath" timeOut="3" value="//android.widget.Button/preceding-sibling::android.view.View[3]//android.widget.EditText">企业</locator>
+        <locator type="xpath" timeOut="3" value="//android.widget.Button/preceding-sibling::android.view.View[2]//android.widget.EditText">门店</locator>
+        <locator type="xpath" timeOut="3" value="//android.widget.Button/preceding-sibling::android.view.View[1]//android.widget.EditText">POSID</locator>
+        <locator type="xpath" timeOut="3" value="//android.widget.Button">登录按钮</locator>
+    </page>
+
+    <page pageName="POSHomePage">
+        <locator type="xpath" timeOut="3" value="//android.view.View[@text='当班']">当班</locator>
+    </page>
+
+</map>
