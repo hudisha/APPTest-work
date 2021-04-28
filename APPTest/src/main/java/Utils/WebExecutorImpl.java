@@ -36,6 +36,14 @@ public class WebExecutorImpl implements Utils.WebExecutor {
         }
     }
 
+    public void click(WebElement element) {
+        try {
+            element.click();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
     @Override
     public void send(Locator locator, String values) {
         try {
@@ -180,21 +188,21 @@ public class WebExecutorImpl implements Utils.WebExecutor {
                 list = driver.findElements(By.className(locator.getAddress()));
                 break;
             case linkText:
-                list = driver.findElement(By.linkText(locator.getAddress()));
+                list = driver.findElements(By.linkText(locator.getAddress()));
                 break;
             case partLinkText:
-                list = driver.findElement(By.partialLinkText(locator.getAddress()));
+                list = driver.findElements(By.partialLinkText(locator.getAddress()));
                 break;
             case selector:
-                list = driver.findElement(By.cssSelector(locator.getAddress()));
+                list = driver.findElements(By.cssSelector(locator.getAddress()));
                 break;
             case tagName:
-                list = driver.findElement(By.tagName(locator.getAddress()));
+                list = driver.findElements(By.tagName(locator.getAddress()));
                 break;
             default:
                 list = driver.findElements(By.id(locator.getAddress()));
         }
-        return null;
+        return list;
     }
 
     @Override

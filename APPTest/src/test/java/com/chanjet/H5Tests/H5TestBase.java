@@ -10,8 +10,7 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
-import java.util.Arrays;
-import java.util.Iterator;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
 import java.util.concurrent.TimeUnit;
@@ -140,11 +139,11 @@ public class H5TestBase {
         String[] categories=product_category.split(">");
         webAction.click("分类Tab","HomePage",wangPu_xmlPath);
 
-        List<WebElement> elementList=webAction.findWebElements("商品分类","ProductCategoryPage",wangPu_xmlPath);
+        List<WebElement> cateList =webAction.findWebElements("商品分类","ProductCategoryPage",wangPu_xmlPath);
 
         //用for循环,去验证商品分类都显示出来了。
-        List<String> categoriesH5=null;
-        for(WebElement element:elementList){
+        List<String> categoriesH5=new ArrayList<String>();
+        for(WebElement element: cateList){
 
             String category=webAction.getText(element,"某一未选定商品分类名称","ProductCategoryPage",wangPu_xmlPath);
             categoriesH5.add(category);
@@ -156,8 +155,27 @@ public class H5TestBase {
         String productAndCategory=PropertiesUtils.getTheProperty(WangPuInfoProp,"product&Category");
         String cate=productAndCategory.split(">")[0];
         String[] products=productAndCategory.split(">")[1].split("&");
+
         //点击某一分类：普通商品，验证其下的商品
-        //webAction.click();
+        for(WebElement element: cateList){
+
+            String category=webAction.getText(element,"某一未选定商品分类名称","ProductCategoryPage",wangPu_xmlPath);
+            if(category.equals(cate)){
+                webAction.click(element,"ProductCategoryPage",wangPu_xmlPath);
+                break;
+            }
+        }
+
+        List<String> productsH5=new ArrayList<String>();
+        List<WebElement> prodList=webAction.findWebElements("商品卡片","ProductCategoryPage",wangPu_xmlPath);
+        for(WebElement element:prodList){
+            String prod=webAction.getText(element,"某一商品名称","ProductCategoryPage",wangPu_xmlPath);
+            productsH5.add(prod);
+        }
+        for (String p :
+                products) {
+            Assert.isTrue(productsH5.contains(p), "分类下的商品丢失了！");
+        }
     }
 
     public void WangPu_ProductDetails(){

@@ -38,6 +38,10 @@ public class H5BasePage extends WebExecutorImpl {
         super.click(getLocator(locator));
     }
 
+    public void click(WebElement element){
+        super.click(element);
+    }
+
     public void send(String locator, String values) {
         super.send(getLocator(locator),values);
     }

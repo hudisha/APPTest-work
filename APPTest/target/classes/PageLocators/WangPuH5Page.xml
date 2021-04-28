@@ -34,8 +34,10 @@
     </page>
     <page pageName="ProductCategoryPage">
         <locator type="selector" timeOut="3" value="div.left-bar-item">商品分类</locator>
-        <locator type="selector" timeOut="3" value="div.left-bar-item.side-item-unselect span">某一未选定商品分类名称</locator>
+        <locator type="tagName" timeOut="3" value="span">某一未选定商品分类名称</locator>
         <locator type="selector" timeOut="3" value="div.left-bar-item.side-item-select span span">选定的商品分类名称</locator>
+        <locator type="selector" timeOut="3" value="div.prod-list-item">商品卡片</locator>
+        <locator type="selector" timeOut="3" value="div.p-name">某一商品名称</locator>
     </page>
     <page pageName="UserPage">
         <locator type="linkText" timeOut="5" value="退出登录">退出登录Btn</locator>

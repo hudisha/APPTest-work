@@ -42,6 +42,26 @@ public class WebAction {
         }
     }
 
+    public void click(WebElement element, String locator,String pageName,String filename) {
+        try {
+            webPage = new H5BasePage(driver,pageName,filename);
+            webPage.click(locator);
+            Thread.sleep(1000);
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+    }
+
+    public void click(WebElement element,String pageName,String filename){
+        try {
+            webPage = new H5BasePage(driver,pageName,filename);
+            webPage.click(element);
+            Thread.sleep(1000);
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+    }
+
     public void send(String locator,String pageName,String fileName,String values) {
         try {
             webPage = new H5BasePage(driver,pageName,fileName);

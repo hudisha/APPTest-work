@@ -88,6 +88,8 @@ public class XmlUtils {
             bytype = Locator.ByType.partLinkText;
         } else if(type.equalsIgnoreCase("selector")){
             bytype=Locator.ByType.selector;
+        } else if(type.equalsIgnoreCase("tagName")){
+            bytype=Locator.ByType.tagName;
         }
         return bytype;
 
